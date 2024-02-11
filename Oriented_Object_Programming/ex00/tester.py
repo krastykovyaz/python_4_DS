@@ -1,6 +1,9 @@
-from S1E9 import Character, Stark
+from S1E9 import Stark
 
-if __name__=='__main__':
+def main():
+    """
+    Main function to test the Stark class.
+    """
     Ned = Stark("Ned")
     print(Ned.__dict__)
     print(Ned.is_alive)
@@ -12,5 +15,6 @@ if __name__=='__main__':
     print("---")
     Lyanna = Stark("Lyanna", False)
     print(Lyanna.__dict__)
-    from S1E9 import Character
-    # hodor = Character("hodor")
+
+if __name__ == "__main__":
+    main()

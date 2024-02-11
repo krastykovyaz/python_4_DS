@@ -2,13 +2,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from load_csv import load
 
-from load_csv import load
-import matplotlib.pyplot as plt
-
-
-def preprocess(population):
+def preprocess_population(population):
     """
-        string covert to float
+    Preprocesses the population string to convert it into a numeric value in standard form.
+
+    Args:
+        population (str): Population string with or without the 'M' or 'k' suffix.
+
+    Returns:
+        float: Numeric population value.
     """
     if "M" in population:
         return float(population[:-1]) * 1e6
@@ -18,6 +20,17 @@ def preprocess(population):
         return float(population)
 
 def plot_population_comparison(dataset: pd.DataFrame, campus: str, comparison_country: str):
+    """
+    Plots the population comparison between a campus and a comparison country.
+
+    Args:
+        dataset (pd.DataFrame): DataFrame containing population data.
+        campus (str): Name of the campus.
+        comparison_country (str): Name of the comparison country.
+
+    Returns:
+        None
+    """
     try:
         campus_data = dataset[dataset['country'] == campus].iloc[:, 1:].values.flatten()
         comparison_country_data = dataset[dataset['country'] == comparison_country].iloc[:, 1:]
@@ -25,9 +38,8 @@ def plot_population_comparison(dataset: pd.DataFrame, campus: str, comparison_co
 
         comparison_country_data = comparison_country_data.values.flatten()
 
-
-        campus_pop = [preprocess(val) for val in campus_data]
-        country_pop = [preprocess(val) for val in comparison_country_data]
+        campus_pop = [preprocess_population(val) for val in campus_data]
+        country_pop = [preprocess_population(val) for val in comparison_country_data]
 
         plt.plot(years, campus_pop, label=campus)
         plt.plot(years, country_pop, label=comparison_country)
@@ -45,13 +57,14 @@ def plot_population_comparison(dataset: pd.DataFrame, campus: str, comparison_co
         plt.yticks(y_ticks, ["{:,.0f}M".format(pop / 1e6) for pop in y_ticks])
         plt.show()
 
-
-
     except Exception as e:
         # Handle errors
         print(f"Error plotting data: {e}")
 
-if __name__=='__main__':
+def main():
+    """
+    Main function to load data and plot population comparison.
+    """
     dataset = load("population_total.csv")
     if dataset is not None:
         # Specify your campus name and the country for comparison
@@ -59,4 +72,5 @@ if __name__=='__main__':
         comparison_country = "Russia"  
         plot_population_comparison(dataset, your_campus, comparison_country)
 
-
+if __name__ == "__main__":
+    main()

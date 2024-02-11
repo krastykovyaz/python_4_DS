@@ -1,0 +1,6 @@
+tqdm
+build
+Pillow
+numpy
+matplotlib
+pandas
