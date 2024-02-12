@@ -1,6 +1,7 @@
 import time
 from typing import Generator
 
+
 def ft_tqdm(lst: range) -> Generator:
     """
     A custom tqdm implementation to display progress bars.
@@ -17,24 +18,12 @@ def ft_tqdm(lst: range) -> Generator:
         elapsed_time = time.time() - start_time
         progress = i / total
         percentage = int(progress * 100)
+        speed = i / elapsed_time if elapsed_time > 0 else 0
 
         bar_length = 40
         num_hashes = int(progress * bar_length)
         bar = '=' * num_hashes + '>' + ' ' * (bar_length - num_hashes)
 
-        info_str = f'{percentage}%|[{bar}]| {i}/{total}'
+        info_str = f'{percentage}%|[{bar}]| {i}/{total} [{speed: .2f}it/s]'
         print(info_str, end='\r')
         yield elem
-
-# Example usage
-if __name__ == "__main__":
-    from time import sleep
-    from tqdm import tqdm
-
-    print("Custom ft_tqdm:")
-    for elem in ft_tqdm(range(333)):
-        sleep(0.005)
-    print()
-    # print("\nOriginal tqdm:")
-    # for elem in tqdm(range(333)):
-    #     sleep(0.005)

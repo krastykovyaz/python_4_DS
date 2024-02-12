@@ -1,5 +1,6 @@
 from NULL_not_found import NULL_not_found
 
+
 def main():
     """
     Main function to test the NULL_not_found function.
@@ -15,7 +16,8 @@ def main():
     NULL_not_found(Zero)
     NULL_not_found(Empty)
     NULL_not_found(Fake)
-    NULL_not_found("Brian")
+    print(NULL_not_found("Brian"))
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 from find_ft_type import all_thing_is_obj
 
+
 def main():
     """
     Main function to test the all_thing_is_obj function.
@@ -16,6 +17,7 @@ def main():
     all_thing_is_obj("Brian")
     all_thing_is_obj("Toto")
     print(all_thing_is_obj(10))
+
 
 if __name__ == '__main__':
     main()

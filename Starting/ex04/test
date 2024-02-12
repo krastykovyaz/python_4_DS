@@ -1,0 +1,5 @@
+ python whatis.py 14
+ python whatis.py -5
+ python whatis.py
+ python whatis.py Hi!
+ python whatis.py 13 5

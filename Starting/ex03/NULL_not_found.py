@@ -6,7 +6,8 @@ def NULL_not_found(obj: any) -> int:
         obj (any): The object to check.
 
     Returns:
-        int: 0 if the object is None, NaN, 0, empty string, or False, 1 otherwise.
+        int: 0 if the object is None, NaN, 0, empty string, \
+        or False, 1 otherwise.
     """
     # Check if the object is None
     if obj is None:
@@ -31,13 +32,3 @@ def NULL_not_found(obj: any) -> int:
     else:
         print("Type not Found")
         return 1
-
-def main():
-    """
-    Main function to test NULL_not_found function.
-    """
-    # Test cases
-    NULL_not_found(None)
-    NULL_not_found(float('nan'))
-    NULL_not_found(0)
- 

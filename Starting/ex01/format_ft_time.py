@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def main():
     """
     Print the current timestamp in scientific notation and the formatted date.
@@ -15,10 +16,12 @@ def main():
         formatted_date = datetime.now().strftime("%b %d %Y")
 
         # Print the formatted output
-        print(f"Seconds since January 1, 1970: {scientific_notation} or {timestamp:.2e} in scientific notation")
+        print(f"Seconds since January 1, 1970: {scientific_notation} \
+or {timestamp:.2e} in scientific notation")
         print(formatted_date)
     except Exception as e:
         print(f"An error occurred: {e}")
+
 
 if __name__ == "__main__":
     main()

@@ -1,8 +1,10 @@
 import sys
 
+
 def count_characters(text):
     """
-    Count the number of upper-case characters, lower-case characters, punctuation characters,
+    Count the number of upper-case characters, \
+    lower-case characters, punctuation characters,
     digits, and spaces in the given text.
     Args:
     text (str): The input text.
@@ -28,8 +30,8 @@ def count_characters(text):
             char_count['digits'] += 1
         elif char.isspace():
             char_count['spaces'] += 1
-
     return char_count
+
 
 def main():
     """

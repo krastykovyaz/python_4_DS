@@ -1,5 +1,6 @@
 import sys
 
+
 def check_odd_even(num):
     """
     Checks if a number is odd or even and prints the result.
@@ -15,9 +16,11 @@ def check_odd_even(num):
     else:
         print("I'm Odd.")
 
+
 def main():
     """
-    Main function to check if a number is odd or even based on command-line argument.
+    Main function to check if a number is odd \
+    or even based on command-line argument.
     """
     if len(sys.argv) < 2:
         sys.exit(0)
@@ -33,6 +36,7 @@ def main():
     except ValueError:
         print("AssertionError: argument is not an integer")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

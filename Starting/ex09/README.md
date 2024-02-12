@@ -4,7 +4,7 @@ This is a simple Python package named `ft_package` with the following structure:
 
 ft_package/
 |-- ft_package/
-| |-- init.py
+| |-- __init__.py
 | |-- module.py
 |-- setup.py
 
@@ -13,13 +13,15 @@ ft_package/
 
 To install the package, you can use the following steps:
 
+### 1
+
 1. Install the `build` tool:
 
     ```bash
     pip install build
     ```
 
-2. Build the package by running the following command inside the `ft_package` directory:
+2. Build the package by running the following command on the line of `ft_package` directory:
 
     ```bash
     python -m build
@@ -29,12 +31,7 @@ To install the package, you can use the following steps:
 
 3. Install the package inside the package directory using one of the following commands:
 
-    ```bash
-    pip install -e .
-    ```
-
-    or
-
+    
     ```bash
     pip install ./dist/ft_package-0.0.1.tar.gz
     ```
@@ -43,12 +40,6 @@ To install the package, you can use the following steps:
 
     ```bash
     pip install ./dist/ft_package-0.0.1-py3-none-any.whl
-    ```
-
-4. If you are outside the folder, you can still install the package using:
-
-    ```bash
-    pip install -e ft_package
     ```
 
 ## Usage

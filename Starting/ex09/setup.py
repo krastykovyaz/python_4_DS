@@ -4,16 +4,20 @@ setup(
     name='ft_package',
     version='0.0.1',
     packages=find_packages(),
-    Summary='A sample test package',
-    Home_page='https://github.com/eagle/ft_package',
-    Author='eagle',
-    Author_email='eagle@42.fr',
-    License='MIT',
-    Location='/home/eagle/ex09/ft_package',
-    Requires='',
-    Required_by='lnoisome',
-    Metadata_Version='2.1',
-    Installer='pip',
-    Classifiers='',
-    Entry_points=''
+    description='A sample test package',
+    url='https://github.com/krastykovyaz/python_4_DS\
+/tree/master/Starting/ex09/ft_package',
+    author='lnoisome',
+    author_email='lnoisome@42.fr',
+    license='MIT',
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+    ],
+    entry_points={
+        'console_scripts': [
+            'count_in_list=ft_package.module:count_in_list',
+        ],
+    },
 )

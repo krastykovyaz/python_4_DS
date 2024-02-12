@@ -63,9 +63,8 @@ def main():
 
         # Extract argument
         text = sys.argv[1]
-
         # Check argument type
-        if not isinstance(text, str) or any([c for c in text if c.upper() not in NESTED_MORSE]):
+        if not isinstance(text, str) or any([c for c in list(text) if c.upper() not in list(NESTED_MORSE.keys())]):
             raise AssertionError("AssertionError: the arguments are bad")
 
         # Encode and print the result

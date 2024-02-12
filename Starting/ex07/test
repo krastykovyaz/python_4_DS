@@ -1,0 +1,3 @@
+python sos.py 'h$llo' | cat -e
+
+python sos.py "sos" | cat -e
