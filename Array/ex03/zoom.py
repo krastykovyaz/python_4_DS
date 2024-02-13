@@ -1,4 +1,4 @@
-from load_image import loading_img, display_image
+from load_image import ft_load, display_image
 
 
 def zoom_image(image_array, start_x, end_x, start_y, end_y):
@@ -33,11 +33,12 @@ def zoom_image(image_array, start_x, end_x, start_y, end_y):
 
 def main():
     """
-    Main function to load an image, zoom in on a specified region, and display the zoomed portion.
+    Main function to load an image, zoom in on a
+    specified region, and display the zoomed portion.
     """
     try:
         path = "animal.jpeg"
-        img = loading_img(path)
+        img = ft_load(path)
         zoom_image(img, 300, 700, 200, 600)
 
     except Exception as e:

@@ -1,7 +1,8 @@
 from PIL import Image
 import numpy as np
 
-def ft_load(path):
+
+def ft_load(path: str) -> np.ndarray:
     """
     Load an image file from the specified path and return it as a NumPy array.
 
@@ -30,17 +31,3 @@ def ft_load(path):
 
     except Exception as e:
         raise Exception(f"Error loading image: {e}")
-
-def main():
-    """
-    Main function to test loading an image.
-    """
-    try:
-        image_path = "landscape.jpg"
-        image_data = ft_load(image_path)
-        print(image_data)
-    except Exception as e:
-        print(f"Error: {e}")
-
-if __name__ == '__main__':
-    main()

@@ -1,7 +1,7 @@
-from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
-from load_image import loading_img
+from load_image import ft_load
+
 
 def display_image(image_array):
     """
@@ -13,6 +13,7 @@ def display_image(image_array):
     plt.imshow(image_array, cmap='gray')
     plt.colorbar()
     plt.show()
+
 
 def rotate_image(image_array, start_x, end_x, start_y, end_y):
     """
@@ -28,19 +29,20 @@ def rotate_image(image_array, start_x, end_x, start_y, end_y):
     try:
         square_part = np.array(image_array)[start_y:end_y, start_x:end_x, 0:1]
         square_shape = square_part.shape
-        print(f"The shape of the image is: {square_shape} or {square_shape[:2]}")
+        print(f"The shape of image is: {square_shape} or {square_shape[:2]}")
         display_image(square_part)
-
+        print(square_part)
         image_array = image_array.convert('L')
         square_part = np.array(image_array)[start_y:end_y, start_x:end_x]
         transposed_square = np.transpose(square_part)
-
         transposed_shape = transposed_square.shape
         print(f"New shape after Transpose: {transposed_shape}")
+        print(transposed_square)
         display_image(transposed_square)
 
     except Exception as e:
         print(f"Error: {e}")
+
 
 def main():
     """
@@ -48,10 +50,11 @@ def main():
     """
     try:
         path = "animal.jpeg"
-        img = loading_img(path)
+        img = ft_load(path)
         rotate_image(img, 300, 700, 200, 600)
     except Exception as e:
         print(f"Error: {e}")
+
 
 if __name__ == "__main__":
     main()
