@@ -1,17 +1,16 @@
-from abc import ABC, abstractmethod
 from S1E9 import Character
 
+
 class Baratheon(Character):
-    """
-    Representing the Baratheon family.
-    """
+    """Representing the Baratheon family."""
     def __init__(self, first_name: str, is_alive: bool = True):
         """
         Initialize a Baratheon character.
 
         Args:
             first_name (str): The first name of the character.
-            is_alive (bool, optional): The living status of the character. Defaults to True.
+            is_alive (bool, optional):
+            The living status of the character. Defaults to True.
         """
         super().__init__(first_name, is_alive)
         self.family_name = 'Baratheon'
@@ -21,7 +20,7 @@ class Baratheon(Character):
     def die(self):
         """Change the living status of the character to False."""
         self.is_alive = False
-        
+
     def __str__(self) -> str:
         """
         Return a string representation of the Baratheon character.
@@ -29,8 +28,13 @@ class Baratheon(Character):
         Returns:
             str: String representation of the character.
         """
-        return f"{{'first_name': '{self.first_name}', 'is_alive': {self.is_alive}, 'family_name': '{self.family_name}', 'eyes': '{self.eyes}', 'hairs': '{self.hairs}'}}"
-    
+        out = f"""{{'first_name': '{self.first_name}', \
+            'is_alive': {self.is_alive}, 'family_name': '{self.family_name}', \
+                'eyes': '{self.eyes}', \
+                    'hairs': '{self.hairs}'}}""".replace('\n', ' ')
+
+        return out
+
     def __repr__(self) -> str:
         """
         Return a string representation of the Baratheon character.
@@ -38,7 +42,9 @@ class Baratheon(Character):
         Returns:
             str: String representation of the character.
         """
-        return f"{{'first_name': '{self.first_name}', 'is_alive': {self.is_alive}, 'family_name': '{self.family_name}', 'eyes': '{self.eyes}', 'hairs': '{self.hairs}'}}"
+        out = f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
+        return out
+
 
 class Lannister(Character):
     """
@@ -50,7 +56,8 @@ class Lannister(Character):
 
         Args:
             first_name (str): The first name of the character.
-            is_alive (bool, optional): The living status of the character. Defaults to True.
+            is_alive (bool, optional):
+            The living status of the character. Defaults to True.
         """
         super().__init__(first_name, is_alive)
         self.family_name = 'Lannister'
@@ -68,7 +75,10 @@ class Lannister(Character):
         Returns:
             str: String representation of the character.
         """
-        return f"{{'first_name': '{self.first_name}', 'is_alive': {self.is_alive}, 'family_name': '{self.family_name}', 'eyes': '{self.eyes}', 'hairs': '{self.hairs}'}}"
+        out = f"""{{'first_name': '{self.first_name}',
+        'is_alive': {self.is_alive}, 'family_name': '{self.family_name}',
+        'eyes': '{self.eyes}', 'hairs': '{self.hairs}'}}""".replace("\n", ' ')
+        return out
 
     def __repr__(self):
         """
@@ -77,7 +87,7 @@ class Lannister(Character):
         Returns:
             str: String representation of the character.
         """
-        return f"{{'first_name': '{self.first_name}', 'is_alive': {self.is_alive}, 'family_name': '{self.family_name}', 'eyes': '{self.eyes}', 'hairs': '{self.hairs}'}}"
+        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def create_lannister(first_name, is_alive=True):
         """
@@ -85,7 +95,8 @@ class Lannister(Character):
 
         Args:
             first_name (str): The first name of the character.
-            is_alive (bool, optional): The living status of the character. Defaults to True.
+            is_alive (bool, optional):
+            The living status of the character. Defaults to True.
 
         Returns:
             Lannister: A Lannister character object.
