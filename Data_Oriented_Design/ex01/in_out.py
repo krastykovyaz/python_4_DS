@@ -10,6 +10,7 @@ def square(x: int | float) -> int | float:
     """
     return x ** 2
 
+
 def pow(x: int | float) -> int | float:
     """
     Raises a number to the power of itself.
@@ -22,6 +23,7 @@ def pow(x: int | float) -> int | float:
     """
     return x ** x
 
+
 def outer(x: int | float, function) -> object:
     """
     Returns a function that applies the given function repeatedly on the input.
@@ -31,25 +33,27 @@ def outer(x: int | float, function) -> object:
         function (function): The function to be applied.
 
     Returns:
-        function: A function that applies the given function repeatedly on the input.
+        function: A function that applies
+        the given function repeatedly on the input.
     """
-    count = 0
-    last_x = x
+    try:
+        count = 0
+        last_x = x
 
-    def inner() -> float:
-        """
-        Applies the given function on the last result.
+        def inner() -> float:
+            """
+            Applies the given function on the last result.
 
-        Returns:
-            float: The result of applying the function on the last result.
-        """
-        nonlocal count
-        nonlocal last_x
-        res = function(last_x)
-        last_x = res
-        count += 1
-        return res
+            Returns:
+                float: The result of applying the function on the last result.
+            """
+            nonlocal count
+            nonlocal last_x
+            res = function(last_x)
+            last_x = res
+            count += 1
+            return res
 
-    return inner
-
-
+        return inner
+    except Exception as e:
+        print(e)
